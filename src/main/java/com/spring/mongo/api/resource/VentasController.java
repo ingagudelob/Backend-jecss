@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.spring.mongo.api.model.Ventas;
 import com.spring.mongo.api.respository.VentasRepository;
 
-@RestController
+@RestController // Anotacion que es un controlador
+@RequestMapping(value ="/apiTienda/ventas")
+@CrossOrigin("*")
 public class VentasController {
 	
 	@Autowired

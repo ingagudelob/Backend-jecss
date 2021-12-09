@@ -1,5 +1,6 @@
 package com.spring.mongo.api.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Getter;
@@ -10,19 +11,14 @@ import lombok.ToString;
 @Setter
 @ToString
 
-@Document(collection="db_consolidado")
+@Document(collection="db_consolidado") 
+
 public class Consolidated {
 	
-	private int id;
+	@Id
 	private String sede;
 	private long totalVentas;
-	
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	public String getSede() {
 		return sede;
 	}

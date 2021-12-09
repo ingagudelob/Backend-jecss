@@ -4,17 +4,21 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.mongo.api.model.Consolidated;
 import com.spring.mongo.api.respository.ConsolidatedRepository;
 
 @RestController // Anotacion que es un controlador
+@RequestMapping(value ="/apiTienda/consolidate")
+@CrossOrigin("*")
 public class ConsolidatedControlller {
 	
 	// Creamos un objeto de tipo repository de cliente
@@ -26,11 +30,11 @@ public class ConsolidatedControlller {
 	@PostMapping("/addConsolidated")
 	public String saveConsolidated(@RequestBody Consolidated consolidado) {
 		repositorio.save(consolidado);
-		return "Consolidado Guardado con el Id: "+ consolidado.getId();
+		return "Consolidado Guardado";
 	}
 	
 	@GetMapping("/listConsolidated")
-	public List<Consolidated> ListClient(){ // No se reciben paremetros porq lista todos lo clientes
+	public List<Consolidated> ListConsolidates(){ // No se reciben paremetros porq lista todos lo clientes
 		return repositorio.findAll();
 	}
 	
