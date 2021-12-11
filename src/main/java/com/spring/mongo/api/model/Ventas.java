@@ -16,6 +16,7 @@ public class Ventas {
 	private int id;
 	private long clientId;
 	private long totalVenta;
+	private String clientName;
 	/*private long valorIva;
 	private long productId;
 	private long cantidad;
@@ -106,6 +107,14 @@ public class Ventas {
 	public void setDetalleVenta(Object[] detalleVenta) {
 		this.detalleVenta = detalleVenta;
 	}
+	public String getClientName() {
+		return clientName;
+	}
+	public void setClientName(String clientName) {
+		this.clientName = clientName;
+	}
+	
+	
 	
 		
 }
